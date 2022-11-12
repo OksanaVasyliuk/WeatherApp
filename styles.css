@@ -1,0 +1,75 @@
+body {
+  background-color: #012a4aff;
+  margin: 0px;
+  text-align: center;
+}
+.main-box {
+  display: block;
+  font-family: "McLaren", cursive;
+  background-color: #a9d6e5ff;
+  margin: 2.5% 25%;
+  border-radius: 20px;
+  width: 50%;
+  position: relative;
+  padding-top: 15px;
+}
+
+.sunny {
+  display: inline;
+}
+.sun-cloud {
+  position: absolute;
+  left: -10px;
+  display: inline;
+}
+.middle-class {
+  display: inline;
+}
+.text {
+  color: #013a63ff;
+  background-color: #2c7da0ff;
+  font-size: 35px;
+}
+.p-1 {
+  background-color: #2c7da0ff;
+  border-radius: 30px 30px 0 0;
+  margin-bottom: 10px;
+  font-size: 25px;
+}
+.list-group .list-group-item {
+  background-color: #a9d6e5ff;
+  font-size: 26px;
+}
+.card {
+  border-width: 0;
+}
+.weather-icons {
+  margin-right: 20px;
+  margin-left: 10px;
+}
+.weather-conditions {
+  position: relative;
+  top: 9px;
+}
+.temperature {
+  font-size: 30px;
+  font-weight: bolder;
+  padding: 0;
+  margin: 0;
+}
+.top-buttons {
+  border-radius: 40px;
+  background-color: #2c7da0ff;
+}
+
+/* CSS HEX */
+/* --prussian-blue: #012a4aff;
+--indigo-dye: #013a63ff;
+--indigo-dye-2: #01497cff;
+--usafa-blue: #014f86ff;
+--honolulu-blue: #2a6f97ff;
+--celadon-blue: #2c7da0ff;
+--blue-green: #468fafff;
+--maximum-blue: #61a5c2ff;
+--dark-sky-blue: #89c2d9ff;
+--light-blue: #a9d6e5ff; */
