@@ -16,20 +16,38 @@ let months = [
 ];
 date.innerHTML = `${now.getDate()} ${months[now.getMonth()]}`;
 
-let fahrenheit = document.querySelector("#f-button");
-let celcius = document.querySelector("#c-button");
+// let fahrenheit = document.querySelector("#f-button");
+// let celcius = document.querySelector("#c-button");
 let temp = document.querySelector("#temperature");
-function getC() {
-  temp.innerHTML = 20 + "°C";
+// function getC() {
+//   temp.innerHTML = 20 + "°C";
+// }
+
+// function getF() {
+//   temp.innerHTML = 30 * 1.8 + 32 + "°F";
+// }
+// let celButton = document.querySelector("#cel-button");
+
+// fahrenheit.addEventListener("click", getF);
+// celcius.addEventListener("click", getC);
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+
+  // celsiusLink.classList.remove("active");
+  // fahrenheitLink.classList.add("active");
+  let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = `${Math.round(fahrenheiTemperature)}°F`;
 }
 
-function getF() {
-  temp.innerHTML = 30 * 1.8 + 32 + "°F";
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  // celsiusLink.classList.add("active");
+  // fahrenheitLink.classList.remove("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = `{Math.round(celsiusTemperature)}°C`;
 }
-let celButton = document.querySelector("#cel-button");
-
-fahrenheit.addEventListener("click", getF);
-celcius.addEventListener("click", getC);
 
 // Search-engine
 function displayWeather(response) {
@@ -53,7 +71,7 @@ function displayWeather(response) {
 function search(city) {
   let appId = "aecae3506c82c2dee9330bd1a69e78e0";
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${appId}&units=metric`;
-  let searchInput = document.querySelector("#city");
+
   let currentCity = document.querySelector("#current-city");
   if (city) {
     currentCity.innerHTML = city;
@@ -66,10 +84,20 @@ function search(city) {
 
 function getWeatherInformation(event) {
   event.preventDefault();
+  let searchInput = document.querySelector("#city");
   let city = searchInput.value;
+
   search(city);
 }
 
+let celsiusTemperature = null;
 let form = document.querySelector("#search-city");
 form.addEventListener("submit", getWeatherInformation);
+
+let fahrenheitLink = document.querySelector("#f-button");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#c-button");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
 search("Vienna");
