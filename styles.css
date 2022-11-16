@@ -65,6 +65,9 @@ body {
 .date {
   margin: 10px auto;
 }
+.top-buttons {
+  text-transform: uppercase;
+}
 /* CSS HEX */
 /* --prussian-blue: #012a4aff;
 --indigo-dye: #013a63ff;

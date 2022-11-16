@@ -33,12 +33,23 @@ celcius.addEventListener("click", getC);
 
 // Search-engine
 function displayWeather(response) {
+  console.log(response.data);
+
   let temperature = `${Math.round(response.data.main.temp)}°C`;
   let description = response.data.weather[0].description;
   let weatherDescription = document.querySelector("#weather-description");
   let displayTemp = document.querySelector("#temperature");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let iconElement = document.querySelector("#icon");
+
   weatherDescription.innerHTML = description;
   displayTemp.innerHTML = temperature;
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  let iconNumber = response.data.weather[0].icon.substr(0, 2);
+  iconElement.setAttribute("src", `images/${iconNumber}.png`);
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 function search(event) {
@@ -59,4 +70,3 @@ function search(event) {
 }
 let form = document.querySelector("#search-city");
 form.addEventListener("submit", search);
-
