@@ -62,7 +62,9 @@ body {
   border-radius: 40px;
   background-color: #2c7da0ff;
 }
-
+.date {
+  margin: 10px auto;
+}
 /* CSS HEX */
 /* --prussian-blue: #012a4aff;
 --indigo-dye: #013a63ff;
