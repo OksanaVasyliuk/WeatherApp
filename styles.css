@@ -50,6 +50,7 @@ body {
 .weather-conditions {
   position: relative;
   top: 9px;
+  width: 80px;
 }
 .temperature {
   font-size: 30px;
