@@ -22,35 +22,69 @@
   </head>
   <body>
     <div class="main-box">
-      <form id="search-city">
-        <input id="city" placeholder="type city" />
-        <input type="submit" value="Search" />
-      </form>
+      <div class="header">
+        <form id="search-city" style="display: inline">
+          <input id="city" placeholder="type city" />
+          <input type="submit" value="Search" />
+        </form>
+        <button class="btn btn-secondary" id="c-button">°C</button>
+        <button class="btn btn-secondary" id="f-button">°F</button>
+      </div>
 
-      <br />
-
-      <button class="top-buttons" id="button-current-city">
-        <span id="current-city" class="badge rounded-pill text">VIENNA</span>
-      </button>
-
-      <button class="top-buttons" id="c-button">
-        <span class="badge rounded-pill text">°C</span>
-      </button>
-
-      <button class="top-buttons" id="f-button">
-        <span class="badge rounded-pill text">°F</span>
-      </button>
-
-      <button class="top-buttons">
-        <span class="badge rounded-pill text" id="date">10 July</span>
-      </button>
-
+      <!--  -->
+      <div class="container overflow-hidden text-center">
+        <div class="row gx-6">
+          <div class="col">
+            <div class="p-2">
+              <span id="current-city">VIENNA</span>
+            </div>
+          </div>
+          <!-- <div class="col">
+            <div class="p-2">
+              <span id="c-button">°C</span>
+            </div>
+          </div>
+          <div class="col">
+            <div class="p-2">
+              <span id="f-button">°F</span>
+            </div>
+          </div> -->
+          <div class="col">
+            <div class="p-2">
+              <span id="date">10 July</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--  -->
+      <!-- <div class="row align-items-center">
+        <div class="col-4">
+          <button class="top-buttons" id="button-current-city">
+            <span id="current-city">VIENNA</span>
+          </button>
+        </div>
+        <div class="col-2">
+          <button class="top-buttons" id="c-button">
+            <span>°C</span>
+          </button>
+        </div>
+        <div class="col-2">
+          <button class="top-buttons" id="f-button">
+            <span>°F</span>
+          </button>
+        </div>
+        <div class="col-4">
+          <button class="top-buttons">
+            <span id="date">10 July</span>
+          </button>
+        </div>
+      </div> -->
       <div class="container text-center">
         <div class="row">
-          <div class="col-6">
+          <div class="col-5">
             <img class="sunny" id="icon" src="" alt="sunny" width="230px" />
           </div>
-          <div class="col-6" style="text-align: justify">
+          <div class="col-7" style="text-align: justify">
             <ul class="list-group list-group-flush">
               <li class="list-group-item">
                 <img
