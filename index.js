@@ -31,7 +31,70 @@ function displayCelsiusTemperature(event) {
   temperatureElement.innerHTML = `${Math.round(celsiusTemperature)}°C`;
 }
 
+function showForecast(response) {
+  let forecast = response.data.daily;
+  console.log(forecast);
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="container overflow-hidden text-center">
+        <div class="row gx-4">`;
+
+  forecast.forEach(function (forecastDay, index) {
+    let iconNumber = forecastDay.weather[0].icon.substr(0, 2);
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col">
+            <div class="p-1">
+              <p>
+                <img
+                  class="weather-conditions"
+                  src="images/${iconNumber}.png"
+                />
+              </p>
+              <p class="temperature">${Math.round(forecastDay.temp.day)}°C</p>
+              <p class="date">${formatDay(forecastDay.dt)}</p>
+            </div>
+          </div>`;
+    }
+  });
+
+  forecastHTML =
+    forecastHTML +
+    `</div>
+        </div>`;
+
+  forecastElement.innerHTML = forecastHTML;
+}
+
 // Search-engine
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let month = date.getMonth();
+  let day = date.getDate();
+  let months = [
+    "Jan",
+    "Feb",
+    "March",
+    "April",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sept",
+    "OCt",
+    "Nov",
+    "Dec",
+  ];
+
+  return `${day} ${months[month]}`;
+}
+
+function getForecast(coordinates) {
+  let appId = "aecae3506c82c2dee9330bd1a69e78e0";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${appId}&units=metric`;
+  axios.get(apiUrl).then(showForecast);
+}
+
 function displayWeather(response) {
   let temperature = `${Math.round(response.data.main.temp)}°C`;
   let description = response.data.weather[0].description;
@@ -50,6 +113,8 @@ function displayWeather(response) {
   let iconNumber = response.data.weather[0].icon.substr(0, 2);
   iconElement.setAttribute("src", `images/${iconNumber}.png`);
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 function search(city) {
@@ -85,3 +150,5 @@ let celsiusLink = document.querySelector("#c-button");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Vienna");
+
+getForecast();
