@@ -16,37 +16,19 @@ let months = [
 ];
 date.innerHTML = `${now.getDate()} ${months[now.getMonth()]}`;
 
-// let fahrenheit = document.querySelector("#f-button");
-// let celcius = document.querySelector("#c-button");
-let temp = document.querySelector("#temperature");
-// function getC() {
-//   temp.innerHTML = 20 + "°C";
-// }
-
-// function getF() {
-//   temp.innerHTML = 30 * 1.8 + 32 + "°F";
-// }
-// let celButton = document.querySelector("#cel-button");
-
-// fahrenheit.addEventListener("click", getF);
-// celcius.addEventListener("click", getC);
-
 function displayFahrenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
 
-  // celsiusLink.classList.remove("active");
-  // fahrenheitLink.classList.add("active");
   let fahrenheiTemperature = (celsiusTemperature * 9) / 5 + 32;
   temperatureElement.innerHTML = `${Math.round(fahrenheiTemperature)}°F`;
 }
 
 function displayCelsiusTemperature(event) {
   event.preventDefault();
-  // celsiusLink.classList.add("active");
-  // fahrenheitLink.classList.remove("active");
+
   let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = `{Math.round(celsiusTemperature)}°C`;
+  temperatureElement.innerHTML = `${Math.round(celsiusTemperature)}°C`;
 }
 
 // Search-engine
@@ -58,6 +40,8 @@ function displayWeather(response) {
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
   let iconElement = document.querySelector("#icon");
+
+  celsiusTemperature = response.data.main.temp;
 
   weatherDescription.innerHTML = description;
   displayTemp.innerHTML = temperature;
