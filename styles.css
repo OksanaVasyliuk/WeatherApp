@@ -1,7 +1,11 @@
 body {
   background-color: #012a4aff;
+  background-image: url("images/abstract.jpg");
   margin: 0px;
   text-align: center;
+}
+p {
+  margin: 0;
 }
 .main-box {
   display: block;
@@ -42,7 +46,8 @@ body {
   background-color: #2c7da0ff;
   border-radius: 30px;
   margin-bottom: 10px;
-  font-size: 45px;
+  font-size: 40px;
+  padding: 0.15rem !important;
 }
 .list-group .list-group-item {
   background-color: #a9d6e5ff;
@@ -73,7 +78,7 @@ body {
   color: #013a63ff;
 }
 .date {
-  margin: 10px auto;
+  margin: 0;
 }
 #current-city {
   text-transform: uppercase;
