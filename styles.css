@@ -3,6 +3,7 @@ body {
   background-image: url("images/abstract.jpg");
   margin: 0px;
   text-align: center;
+  color: white;
 }
 p {
   margin: 0;
@@ -10,7 +11,7 @@ p {
 .main-box {
   display: block;
   font-family: "McLaren", cursive;
-  background-color: #a9d6e5ff;
+  background-color: #9c99b9;
   margin: 2.5% 25%;
   border-radius: 20px;
   width: 50%;
@@ -20,38 +21,29 @@ p {
 .header {
   margin-bottom: 10px;
 }
-.sunny {
-  display: inline;
-}
-.sun-cloud {
-  position: absolute;
-  left: -10px;
-  display: inline;
-}
-.middle-class {
-  display: inline;
-}
+
 .text {
-  color: #013a63ff;
-  background-color: #2c7da0ff;
+  color: #543154;
+  background-color: #9c99b9;
   font-size: 35px;
 }
 .p-1 {
-  background-color: #2c7da0ff;
+  background-color: #543154;
   border-radius: 30px 30px 0 0;
   margin-bottom: 10px;
   font-size: 25px;
 }
 .p-2 {
-  background-color: #2c7da0ff;
+  background-color: #543154;
   border-radius: 30px;
   margin-bottom: 10px;
   font-size: 40px;
   padding: 0.15rem !important;
 }
 .list-group .list-group-item {
-  background-color: #a9d6e5ff;
+  background-color: #9c99b9;
   font-size: 26px;
+  padding: 4px 0;
 }
 .card {
   border-width: 0;
@@ -73,7 +65,7 @@ p {
 }
 .top-buttons {
   border-radius: 40px;
-  background-color: #2c7da0ff;
+  background-color: #543154;
   font-size: 40px;
   color: #013a63ff;
 }
@@ -83,14 +75,3 @@ p {
 #current-city {
   text-transform: uppercase;
 }
-/* CSS HEX */
-/* --prussian-blue: #012a4aff;
---indigo-dye: #013a63ff;
---indigo-dye-2: #01497cff;
---usafa-blue: #014f86ff;
---honolulu-blue: #2a6f97ff;
---celadon-blue: #2c7da0ff;
---blue-green: #468fafff;
---maximum-blue: #61a5c2ff;
---dark-sky-blue: #89c2d9ff;
---light-blue: #a9d6e5ff; */
